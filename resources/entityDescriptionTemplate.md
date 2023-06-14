@@ -1,0 +1,6 @@
+### [ENTITY_NAME]
+
+[ENTITY_COMMENT]
+
+[COLUMNS]
+---

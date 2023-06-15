@@ -1,15 +1,11 @@
-github.com/PDCMFinder/db-descriptor v0.0.0-20230608160550-0d55f750a0c4 h1:iS1GLT5lCrYWgfOSZZH6dmytgPG9Nd0g3oIWHCTd2Tg=
-github.com/PDCMFinder/db-descriptor v0.0.0-20230608160550-0d55f750a0c4/go.mod h1:s6BLhj5+mvRAP9+YzlNkRJ5690B4LsppET2ywLcYcDY=
-github.com/PDCMFinder/db-descriptor v1.0.1 h1:xcnG6izOpK+2fKRin+rNFjWzcwB2peJ1fnJ9t70L1uU=
-github.com/PDCMFinder/db-descriptor v1.0.1/go.mod h1:s6BLhj5+mvRAP9+YzlNkRJ5690B4LsppET2ywLcYcDY=
 github.com/PDCMFinder/db-descriptor v1.0.2 h1:dvmygmoISsKtvHCtDNKWoqZGwnEwP/MP18LUZPXZnDk=
 github.com/PDCMFinder/db-descriptor v1.0.2/go.mod h1:s6BLhj5+mvRAP9+YzlNkRJ5690B4LsppET2ywLcYcDY=
+github.com/PDCMFinder/db-descriptor v1.0.3 h1:o7gjM7zVRs+J7BewuVVff1jOdtCqiFThQiBarUsXPP8=
+github.com/PDCMFinder/db-descriptor v1.0.3/go.mod h1:s6BLhj5+mvRAP9+YzlNkRJ5690B4LsppET2ywLcYcDY=
 github.com/cpuguy83/go-md2man/v2 v2.0.2 h1:p1EgwI/C7NhT0JmVkwCD2ZBK8j4aeHQX2pMHHBfMQ6w=
 github.com/cpuguy83/go-md2man/v2 v2.0.2/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/lib/pq v1.10.9 h1:YXG7RB+JIjhP29X+OtkiDnYaXQwpS4JEWq7dtCCRUEw=
 github.com/lib/pq v1.10.9/go.mod h1:AlVN5x4E4T544tWzH6hKfbfQvm3HdbOxrmggDNAPY9o=
-github.com/magiconair/properties v1.8.7 h1:IeQXZAiQcpL9mgcAe1Nu6cX9LLw6ExEHKjN0VQdvPDY=
-github.com/magiconair/properties v1.8.7/go.mod h1:Dhd985XPs7jluiymwWYZ0G4Z61jb3vdS329zhj2hYo0=
 github.com/russross/blackfriday/v2 v2.1.0 h1:JIOH55/0cWyOuilr9/qlrm0BSXldqnqwMsf35Ld67mk=
 github.com/russross/blackfriday/v2 v2.1.0/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
 github.com/urfave/cli/v2 v2.25.5 h1:d0NIAyhh5shGscroL7ek/Ya9QYQE0KNabJgiUinIQkc=

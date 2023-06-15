@@ -2,5 +2,9 @@
 
 [ENTITY_COMMENT]
 
+#### Columns
 [COLUMNS]
+
+#### Relations
+[RELATIONS]
 ---

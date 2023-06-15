@@ -42,8 +42,15 @@ func buildEntitiesContent(entities []model.Entity) string {
 func buildEntityContent(entity model.Entity, template string) string {
 	entityContent := strings.ReplaceAll(template, "[ENTITY_NAME]", entity.Name)
 	entityContent = strings.ReplaceAll(entityContent, "[ENTITY_COMMENT]", entity.Comment)
-	columsTable := buildColumnsTable(entity.Columns)
-	entityContent = strings.ReplaceAll(entityContent, "[COLUMNS]", columsTable)
+	columnsTable := buildColumnsTable(entity.Columns)
+	entityContent = strings.ReplaceAll(entityContent, "[COLUMNS]", columnsTable)
+	if len(entity.Relations) > 0 {
+		relationsTable := buildRelationsTable(entity.Relations)
+		entityContent = strings.ReplaceAll(entityContent, "[RELATIONS]", relationsTable)
+	} else {
+		entityContent = strings.ReplaceAll(entityContent, "#### Relations", "")
+		entityContent = strings.ReplaceAll(entityContent, "[RELATIONS]", "")
+	}
 	return entityContent
 }
 
@@ -66,6 +73,26 @@ func buildColumnsTable(columns []model.Column) string {
 		}
 		columnValues = append(columnValues, comment)
 		rowsSb.WriteString(createTableRow(columnValues) + "\n")
+	}
+
+	sb.WriteString(header + "\n")
+	sb.WriteString(rowsSb.String() + "\n")
+	return sb.String()
+}
+
+func buildRelationsTable(relations []model.Relation) string {
+	var sb strings.Builder
+	headerList := []string{"Column Name", "Foreign Table", "Foreign Table Primary Key", "Foreign Key Name"}
+	header := createTableHeader(headerList)
+	var rowsSb strings.Builder
+	for _, relation := range relations {
+		relationValues := make([]string, 0)
+		columnName := relation.ColumnName
+		relationValues = append(relationValues, columnName)
+		relationValues = append(relationValues, relation.ForeignEntityName)
+		relationValues = append(relationValues, relation.ForeignColumnName)
+		relationValues = append(relationValues, relation.RelationName)
+		rowsSb.WriteString(createTableRow(relationValues) + "\n")
 	}
 
 	sb.WriteString(header + "\n")

@@ -3,7 +3,7 @@ module github.com/PDCMFinder/db-docu-to-markdown
 go 1.20
 
 require (
-	github.com/PDCMFinder/db-descriptor v1.0.3
+	github.com/PDCMFinder/db-descriptor v1.0.5
 	github.com/urfave/cli/v2 v2.25.5
 )
 

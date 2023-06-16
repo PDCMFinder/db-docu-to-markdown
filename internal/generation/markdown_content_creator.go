@@ -1,6 +1,7 @@
 package generation
 
 import (
+	_ "embed"
 	"fmt"
 	"log"
 	"os"
@@ -10,8 +11,14 @@ import (
 	"github.com/PDCMFinder/db-descriptor/pkg/model"
 )
 
+//go:embed templates/singlePageTemplate.md
+var singlePageTemplate string
+
+//go:embed templates/entityDescriptionTemplate.md
+var entityDescriptionTemplate string
+
 func generateMarkdownContent(databaseDescription model.DatabaseDescription) {
-	templateContent := readTemplate("singlePageTemplate.md")
+	templateContent := singlePageTemplate
 	for _, schema := range databaseDescription.Schemas {
 		generateContentForSchema(schema, templateContent)
 	}
@@ -30,7 +37,7 @@ func buildEntitiesContent(entities []model.Entity) string {
 	sort.Slice(entities, func(i, j int) bool {
 		return entities[i].Name < entities[j].Name
 	})
-	template := readTemplate("entityDescriptionTemplate.md")
+	template := entityDescriptionTemplate
 	var entitiesSectionSb strings.Builder
 	for _, entity := range entities {
 		entityContent := buildEntityContent(entity, template)
@@ -154,12 +161,4 @@ func saveOutput(fileContent, schemaName string) {
 	}
 
 	log.Println("File", filePath, "created")
-}
-
-func readTemplate(templateName string) string {
-	content, err := os.ReadFile("resources/" + templateName)
-	if err != nil {
-		log.Fatalf("unable to read file: %v", err)
-	}
-	return string(content)
 }
